@@ -1,0 +1,682 @@
+2022-02-14 16:53:46,701 2100 INFO ? odoo: Odoo version 13.0-20220214 
+2022-02-14 16:53:46,701 2100 INFO ? odoo: Using configuration file at C:\Program Files (x86)\Odoo 13.0\server\odoo.conf 
+2022-02-14 16:53:46,701 2100 INFO ? odoo: addons paths: ['C:\\Program Files (x86)\\Odoo 13.0\\server\\odoo\\addons', 'c:\\users\\dall-193\\appdata\\local\\openerp s.a\\odoo\\addons\\13.0', 'c:\\program files (x86)\\odoo 13.0\\server\\odoo\\addons'] 
+2022-02-14 16:53:46,701 2100 INFO ? odoo: database: openpg@localhost:5432 
+2022-02-14 16:53:51,852 2100 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at C:\Program Files (x86)\Odoo 13.0\thirdparty\wkhtmltopdf.exe 
+2022-02-14 16:53:54,885 2100 INFO ? odoo.service.server: Initiating shutdown 
+2022-02-14 16:53:54,886 2100 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2022-02-14 16:54:00,172 11104 INFO ? odoo: Odoo version 13.0-20220214 
+2022-02-14 16:54:00,172 11104 INFO ? odoo: Using configuration file at C:\Program Files (x86)\Odoo 13.0\server\odoo.conf 
+2022-02-14 16:54:00,172 11104 INFO ? odoo: addons paths: ['C:\\Program Files (x86)\\Odoo 13.0\\server\\odoo\\addons', 'c:\\users\\dall-193\\appdata\\local\\openerp s.a\\odoo\\addons\\13.0', 'c:\\program files (x86)\\odoo 13.0\\server\\odoo\\addons'] 
+2022-02-14 16:54:00,180 11104 INFO ? odoo: database: openpg@localhost:5432 
+2022-02-14 16:54:00,868 11104 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at C:\Program Files (x86)\Odoo 13.0\thirdparty\wkhtmltopdf.exe 
+2022-02-14 16:54:13,216 11104 INFO ? odoo.service.server: HTTP service (werkzeug) running on Dell:8069 
+2022-02-14 16:56:19,705 11104 INFO ? odoo.http: HTTP Configuring static files 
+2022-02-14 16:56:24,317 11104 INFO ? odoo.sql_db: Connection to the database failed 
+2022-02-14 16:56:24,319 11104 INFO ? werkzeug: 127.0.0.1 - - [14/Feb/2022 16:56:24] "GET / HTTP/1.1" 500 - 0 0.000 4.492
+2022-02-14 16:56:24,349 11104 ERROR ? werkzeug: Error on request:
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 304, in run_wsgi
+    execute(self.server.app)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 292, in execute
+    application_iter = app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\server.py", line 441, in app
+    return self.app(e, s)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 142, in application
+    return application_unproxied(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 117, in application_unproxied
+    result = odoo.http.root(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1287, in __call__
+    return self.dispatch(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1257, in __call__
+    return self.app(environ, start_wrapped)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\middleware\shared_data.py", line 220, in __call__
+    return self.app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1420, in dispatch
+    self.setup_db(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1344, in setup_db
+    httprequest.session.db = db_monodb(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1505, in db_monodb
+    dbs = db_list(True, httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1472, in db_list
+    dbs = odoo.service.db.list_dbs(force)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\db.py", line 378, in list_dbs
+    with closing(db.cursor()) as cr:
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 665, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 196, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 548, in _locked
+    return fun(self, *args, **kwargs)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 616, in borrow
+    **connection_info)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\psycopg2\__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432? - - -
+2022-02-14 16:58:13,678 11104 INFO ? odoo.sql_db: Connection to the database failed 
+2022-02-14 16:58:13,685 11104 INFO ? werkzeug: 127.0.0.1 - - [14/Feb/2022 16:58:13] "GET / HTTP/1.1" 500 - 0 0.000 0.220
+2022-02-14 16:58:13,699 11104 ERROR ? werkzeug: Error on request:
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 304, in run_wsgi
+    execute(self.server.app)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 292, in execute
+    application_iter = app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\server.py", line 441, in app
+    return self.app(e, s)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 142, in application
+    return application_unproxied(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 117, in application_unproxied
+    result = odoo.http.root(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1287, in __call__
+    return self.dispatch(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1257, in __call__
+    return self.app(environ, start_wrapped)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\middleware\shared_data.py", line 220, in __call__
+    return self.app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1420, in dispatch
+    self.setup_db(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1344, in setup_db
+    httprequest.session.db = db_monodb(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1505, in db_monodb
+    dbs = db_list(True, httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1472, in db_list
+    dbs = odoo.service.db.list_dbs(force)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\db.py", line 378, in list_dbs
+    with closing(db.cursor()) as cr:
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 665, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 196, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 548, in _locked
+    return fun(self, *args, **kwargs)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 616, in borrow
+    **connection_info)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\psycopg2\__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "openpg" - - -
+2022-02-14 16:58:14,114 11104 INFO ? odoo.sql_db: Connection to the database failed 
+2022-02-14 16:58:14,120 11104 INFO ? werkzeug: 127.0.0.1 - - [14/Feb/2022 16:58:14] "GET /favicon.ico HTTP/1.1" 500 - 0 0.000 0.090
+2022-02-14 16:58:14,136 11104 ERROR ? werkzeug: Error on request:
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 304, in run_wsgi
+    execute(self.server.app)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 292, in execute
+    application_iter = app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\server.py", line 441, in app
+    return self.app(e, s)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 142, in application
+    return application_unproxied(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 117, in application_unproxied
+    result = odoo.http.root(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1287, in __call__
+    return self.dispatch(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1257, in __call__
+    return self.app(environ, start_wrapped)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\middleware\shared_data.py", line 220, in __call__
+    return self.app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1420, in dispatch
+    self.setup_db(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1344, in setup_db
+    httprequest.session.db = db_monodb(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1505, in db_monodb
+    dbs = db_list(True, httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1472, in db_list
+    dbs = odoo.service.db.list_dbs(force)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\db.py", line 378, in list_dbs
+    with closing(db.cursor()) as cr:
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 665, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 196, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 548, in _locked
+    return fun(self, *args, **kwargs)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 616, in borrow
+    **connection_info)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\psycopg2\__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "openpg" - - -
+2022-02-15 02:52:59,382 11104 INFO chan odoo.sql_db: Connection to the database failed 
+2022-02-15 02:52:59,576 11104 INFO chan odoo.http: Generating nondb routing 
+2022-02-15 02:53:00,758 11104 INFO chan werkzeug: 127.0.0.1 - - [15/Feb/2022 02:53:00] "GET / HTTP/1.1" 303 - 0 0.000 2.117
+2022-02-15 02:53:01,116 11104 INFO ? odoo.sql_db: Connection to the database failed 
+2022-02-15 02:53:01,436 11104 INFO ? werkzeug: 127.0.0.1 - - [15/Feb/2022 02:53:01] "GET /web HTTP/1.1" 500 - 0 0.000 0.465
+2022-02-15 02:53:01,607 11104 INFO ? odoo.sql_db: Connection to the database failed 
+2022-02-15 02:53:01,638 11104 INFO ? werkzeug: 127.0.0.1 - - [15/Feb/2022 02:53:01] "GET /web HTTP/1.1" 500 - 0 0.000 0.218
+2022-02-15 02:53:02,241 11104 ERROR ? werkzeug: Error on request:
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 304, in run_wsgi
+    execute(self.server.app)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 292, in execute
+    application_iter = app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\server.py", line 441, in app
+    return self.app(e, s)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 142, in application
+    return application_unproxied(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 117, in application_unproxied
+    result = odoo.http.root(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1287, in __call__
+    return self.dispatch(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1257, in __call__
+    return self.app(environ, start_wrapped)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\middleware\shared_data.py", line 220, in __call__
+    return self.app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1420, in dispatch
+    self.setup_db(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1344, in setup_db
+    httprequest.session.db = db_monodb(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1505, in db_monodb
+    dbs = db_list(True, httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1472, in db_list
+    dbs = odoo.service.db.list_dbs(force)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\db.py", line 378, in list_dbs
+    with closing(db.cursor()) as cr:
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 665, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 196, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 548, in _locked
+    return fun(self, *args, **kwargs)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 616, in borrow
+    **connection_info)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\psycopg2\__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "openpg" - - -
+2022-02-15 02:53:02,193 11104 ERROR ? werkzeug: Error on request:
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 304, in run_wsgi
+    execute(self.server.app)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 292, in execute
+    application_iter = app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\server.py", line 441, in app
+    return self.app(e, s)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 142, in application
+    return application_unproxied(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 117, in application_unproxied
+    result = odoo.http.root(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1287, in __call__
+    return self.dispatch(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1257, in __call__
+    return self.app(environ, start_wrapped)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\middleware\shared_data.py", line 220, in __call__
+    return self.app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1420, in dispatch
+    self.setup_db(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1344, in setup_db
+    httprequest.session.db = db_monodb(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1505, in db_monodb
+    dbs = db_list(True, httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1472, in db_list
+    dbs = odoo.service.db.list_dbs(force)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\db.py", line 378, in list_dbs
+    with closing(db.cursor()) as cr:
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 665, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 196, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 548, in _locked
+    return fun(self, *args, **kwargs)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 616, in borrow
+    **connection_info)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\psycopg2\__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "openpg" - - -
+2022-02-15 02:53:02,387 11104 INFO ? odoo.sql_db: Connection to the database failed 
+2022-02-15 02:53:02,396 11104 INFO ? werkzeug: 127.0.0.1 - - [15/Feb/2022 02:53:02] "GET /favicon.ico HTTP/1.1" 500 - 0 0.000 0.072
+2022-02-15 02:53:02,407 11104 ERROR ? werkzeug: Error on request:
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 304, in run_wsgi
+    execute(self.server.app)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 292, in execute
+    application_iter = app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\server.py", line 441, in app
+    return self.app(e, s)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 142, in application
+    return application_unproxied(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 117, in application_unproxied
+    result = odoo.http.root(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1287, in __call__
+    return self.dispatch(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1257, in __call__
+    return self.app(environ, start_wrapped)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\middleware\shared_data.py", line 220, in __call__
+    return self.app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1420, in dispatch
+    self.setup_db(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1344, in setup_db
+    httprequest.session.db = db_monodb(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1505, in db_monodb
+    dbs = db_list(True, httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1472, in db_list
+    dbs = odoo.service.db.list_dbs(force)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\db.py", line 378, in list_dbs
+    with closing(db.cursor()) as cr:
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 665, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 196, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 548, in _locked
+    return fun(self, *args, **kwargs)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 616, in borrow
+    **connection_info)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\psycopg2\__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "openpg" - - -
+2022-02-15 03:57:50,885 11104 INFO chan odoo.sql_db: Connection to the database failed 
+2022-02-15 03:57:51,047 11104 INFO chan odoo.sql_db: Connection to the database failed 
+2022-02-15 03:57:51,719 11104 INFO chan werkzeug: 127.0.0.1 - - [15/Feb/2022 03:57:51] "GET / HTTP/1.1" 303 - 0 0.000 1.152
+2022-02-15 03:57:51,777 11104 INFO chan werkzeug: 127.0.0.1 - - [15/Feb/2022 03:57:51] "GET / HTTP/1.1" 303 - 0 0.000 1.941
+2022-02-15 03:57:51,977 11104 INFO ? odoo.sql_db: Connection to the database failed 
+2022-02-15 03:57:52,064 11104 INFO ? werkzeug: 127.0.0.1 - - [15/Feb/2022 03:57:52] "GET /web HTTP/1.1" 500 - 0 0.000 0.201
+2022-02-15 03:57:52,860 11104 INFO ? odoo.sql_db: Connection to the database failed 
+2022-02-15 03:57:52,866 11104 INFO ? werkzeug: 127.0.0.1 - - [15/Feb/2022 03:57:52] "GET /favicon.ico HTTP/1.1" 500 - 0 0.000 0.193
+2022-02-15 03:57:53,593 11104 ERROR ? werkzeug: Error on request:
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 304, in run_wsgi
+    execute(self.server.app)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 292, in execute
+    application_iter = app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\server.py", line 441, in app
+    return self.app(e, s)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 142, in application
+    return application_unproxied(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 117, in application_unproxied
+    result = odoo.http.root(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1287, in __call__
+    return self.dispatch(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1257, in __call__
+    return self.app(environ, start_wrapped)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\middleware\shared_data.py", line 220, in __call__
+    return self.app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1420, in dispatch
+    self.setup_db(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1344, in setup_db
+    httprequest.session.db = db_monodb(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1505, in db_monodb
+    dbs = db_list(True, httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1472, in db_list
+    dbs = odoo.service.db.list_dbs(force)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\db.py", line 378, in list_dbs
+    with closing(db.cursor()) as cr:
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 665, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 196, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 548, in _locked
+    return fun(self, *args, **kwargs)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 616, in borrow
+    **connection_info)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\psycopg2\__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "openpg" - - -
+2022-02-15 03:57:53,599 11104 ERROR ? werkzeug: Error on request:
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 304, in run_wsgi
+    execute(self.server.app)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 292, in execute
+    application_iter = app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\server.py", line 441, in app
+    return self.app(e, s)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 142, in application
+    return application_unproxied(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 117, in application_unproxied
+    result = odoo.http.root(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1287, in __call__
+    return self.dispatch(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1257, in __call__
+    return self.app(environ, start_wrapped)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\middleware\shared_data.py", line 220, in __call__
+    return self.app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1420, in dispatch
+    self.setup_db(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1344, in setup_db
+    httprequest.session.db = db_monodb(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1505, in db_monodb
+    dbs = db_list(True, httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1472, in db_list
+    dbs = odoo.service.db.list_dbs(force)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\db.py", line 378, in list_dbs
+    with closing(db.cursor()) as cr:
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 665, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 196, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 548, in _locked
+    return fun(self, *args, **kwargs)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 616, in borrow
+    **connection_info)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\psycopg2\__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "openpg" - - -
+2022-02-15 03:59:47,959 11104 INFO ? odoo.sql_db: Connection to the database failed 
+2022-02-15 03:59:47,963 11104 INFO ? werkzeug: 127.0.0.1 - - [15/Feb/2022 03:59:47] "GET /web HTTP/1.1" 500 - 0 0.000 0.369
+2022-02-15 03:59:48,015 11104 ERROR ? werkzeug: Error on request:
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 304, in run_wsgi
+    execute(self.server.app)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 292, in execute
+    application_iter = app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\server.py", line 441, in app
+    return self.app(e, s)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 142, in application
+    return application_unproxied(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 117, in application_unproxied
+    result = odoo.http.root(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1287, in __call__
+    return self.dispatch(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1257, in __call__
+    return self.app(environ, start_wrapped)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\middleware\shared_data.py", line 220, in __call__
+    return self.app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1420, in dispatch
+    self.setup_db(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1344, in setup_db
+    httprequest.session.db = db_monodb(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1505, in db_monodb
+    dbs = db_list(True, httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1472, in db_list
+    dbs = odoo.service.db.list_dbs(force)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\db.py", line 378, in list_dbs
+    with closing(db.cursor()) as cr:
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 665, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 196, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 548, in _locked
+    return fun(self, *args, **kwargs)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 616, in borrow
+    **connection_info)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\psycopg2\__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "openpg" - - -
+2022-02-15 03:59:48,106 11104 INFO ? odoo.sql_db: Connection to the database failed 
+2022-02-15 03:59:48,111 11104 INFO ? werkzeug: 127.0.0.1 - - [15/Feb/2022 03:59:48] "GET /favicon.ico HTTP/1.1" 500 - 0 0.000 0.067
+2022-02-15 03:59:48,148 11104 ERROR ? werkzeug: Error on request:
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 304, in run_wsgi
+    execute(self.server.app)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 292, in execute
+    application_iter = app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\server.py", line 441, in app
+    return self.app(e, s)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 142, in application
+    return application_unproxied(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 117, in application_unproxied
+    result = odoo.http.root(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1287, in __call__
+    return self.dispatch(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1257, in __call__
+    return self.app(environ, start_wrapped)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\middleware\shared_data.py", line 220, in __call__
+    return self.app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1420, in dispatch
+    self.setup_db(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1344, in setup_db
+    httprequest.session.db = db_monodb(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1505, in db_monodb
+    dbs = db_list(True, httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1472, in db_list
+    dbs = odoo.service.db.list_dbs(force)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\db.py", line 378, in list_dbs
+    with closing(db.cursor()) as cr:
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 665, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 196, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 548, in _locked
+    return fun(self, *args, **kwargs)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 616, in borrow
+    **connection_info)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\psycopg2\__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "openpg" - - -
+2022-02-15 03:59:50,423 11104 INFO ? odoo.sql_db: Connection to the database failed 
+2022-02-15 03:59:50,429 11104 INFO ? werkzeug: 127.0.0.1 - - [15/Feb/2022 03:59:50] "GET / HTTP/1.1" 500 - 0 0.000 0.081
+2022-02-15 03:59:50,444 11104 ERROR ? werkzeug: Error on request:
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 304, in run_wsgi
+    execute(self.server.app)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 292, in execute
+    application_iter = app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\server.py", line 441, in app
+    return self.app(e, s)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 142, in application
+    return application_unproxied(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 117, in application_unproxied
+    result = odoo.http.root(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1287, in __call__
+    return self.dispatch(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1257, in __call__
+    return self.app(environ, start_wrapped)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\middleware\shared_data.py", line 220, in __call__
+    return self.app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1420, in dispatch
+    self.setup_db(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1344, in setup_db
+    httprequest.session.db = db_monodb(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1505, in db_monodb
+    dbs = db_list(True, httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1472, in db_list
+    dbs = odoo.service.db.list_dbs(force)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\db.py", line 378, in list_dbs
+    with closing(db.cursor()) as cr:
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 665, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 196, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 548, in _locked
+    return fun(self, *args, **kwargs)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 616, in borrow
+    **connection_info)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\psycopg2\__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "openpg" - - -
+2022-02-15 03:59:50,734 11104 INFO ? odoo.sql_db: Connection to the database failed 
+2022-02-15 03:59:50,739 11104 INFO ? werkzeug: 127.0.0.1 - - [15/Feb/2022 03:59:50] "GET /favicon.ico HTTP/1.1" 500 - 0 0.000 0.090
+2022-02-15 03:59:50,758 11104 ERROR ? werkzeug: Error on request:
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 304, in run_wsgi
+    execute(self.server.app)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 292, in execute
+    application_iter = app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\server.py", line 441, in app
+    return self.app(e, s)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 142, in application
+    return application_unproxied(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 117, in application_unproxied
+    result = odoo.http.root(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1287, in __call__
+    return self.dispatch(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1257, in __call__
+    return self.app(environ, start_wrapped)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\middleware\shared_data.py", line 220, in __call__
+    return self.app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1420, in dispatch
+    self.setup_db(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1344, in setup_db
+    httprequest.session.db = db_monodb(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1505, in db_monodb
+    dbs = db_list(True, httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1472, in db_list
+    dbs = odoo.service.db.list_dbs(force)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\db.py", line 378, in list_dbs
+    with closing(db.cursor()) as cr:
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 665, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 196, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 548, in _locked
+    return fun(self, *args, **kwargs)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 616, in borrow
+    **connection_info)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\psycopg2\__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "openpg" - - -
+2022-02-15 04:00:21,061 11104 INFO ? odoo.sql_db: Connection to the database failed 
+2022-02-15 04:00:21,068 11104 INFO ? werkzeug: 127.0.0.1 - - [15/Feb/2022 04:00:21] "GET / HTTP/1.1" 500 - 0 0.000 0.122
+2022-02-15 04:00:21,106 11104 ERROR ? werkzeug: Error on request:
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 304, in run_wsgi
+    execute(self.server.app)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 292, in execute
+    application_iter = app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\server.py", line 441, in app
+    return self.app(e, s)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 142, in application
+    return application_unproxied(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 117, in application_unproxied
+    result = odoo.http.root(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1287, in __call__
+    return self.dispatch(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1257, in __call__
+    return self.app(environ, start_wrapped)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\middleware\shared_data.py", line 220, in __call__
+    return self.app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1420, in dispatch
+    self.setup_db(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1344, in setup_db
+    httprequest.session.db = db_monodb(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1505, in db_monodb
+    dbs = db_list(True, httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1472, in db_list
+    dbs = odoo.service.db.list_dbs(force)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\db.py", line 378, in list_dbs
+    with closing(db.cursor()) as cr:
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 665, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 196, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 548, in _locked
+    return fun(self, *args, **kwargs)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 616, in borrow
+    **connection_info)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\psycopg2\__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "openpg" - - -
+2022-02-15 04:00:21,269 11104 INFO ? odoo.sql_db: Connection to the database failed 
+2022-02-15 04:00:21,276 11104 INFO ? werkzeug: 127.0.0.1 - - [15/Feb/2022 04:00:21] "GET /favicon.ico HTTP/1.1" 500 - 0 0.000 0.096
+2022-02-15 04:00:21,306 11104 ERROR ? werkzeug: Error on request:
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 304, in run_wsgi
+    execute(self.server.app)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 292, in execute
+    application_iter = app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\server.py", line 441, in app
+    return self.app(e, s)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 142, in application
+    return application_unproxied(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 117, in application_unproxied
+    result = odoo.http.root(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1287, in __call__
+    return self.dispatch(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1257, in __call__
+    return self.app(environ, start_wrapped)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\middleware\shared_data.py", line 220, in __call__
+    return self.app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1420, in dispatch
+    self.setup_db(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1344, in setup_db
+    httprequest.session.db = db_monodb(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1505, in db_monodb
+    dbs = db_list(True, httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1472, in db_list
+    dbs = odoo.service.db.list_dbs(force)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\db.py", line 378, in list_dbs
+    with closing(db.cursor()) as cr:
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 665, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 196, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 548, in _locked
+    return fun(self, *args, **kwargs)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 616, in borrow
+    **connection_info)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\psycopg2\__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "openpg" - - -
+2022-02-15 04:16:35,009 11104 INFO ? odoo.sql_db: Connection to the database failed 
+2022-02-15 04:16:35,038 11104 INFO ? werkzeug: 127.0.0.1 - - [15/Feb/2022 04:16:35] "GET / HTTP/1.1" 500 - 0 0.000 0.286
+2022-02-15 04:16:35,410 11104 INFO ? odoo.sql_db: Connection to the database failed 
+2022-02-15 04:16:35,429 11104 INFO ? werkzeug: 127.0.0.1 - - [15/Feb/2022 04:16:35] "GET /favicon.ico HTTP/1.1" 500 - 0 0.000 0.129
+2022-02-15 04:16:35,503 11104 ERROR ? werkzeug: Error on request:
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 304, in run_wsgi
+    execute(self.server.app)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 292, in execute
+    application_iter = app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\server.py", line 441, in app
+    return self.app(e, s)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 142, in application
+    return application_unproxied(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 117, in application_unproxied
+    result = odoo.http.root(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1287, in __call__
+    return self.dispatch(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1257, in __call__
+    return self.app(environ, start_wrapped)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\middleware\shared_data.py", line 220, in __call__
+    return self.app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1420, in dispatch
+    self.setup_db(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1344, in setup_db
+    httprequest.session.db = db_monodb(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1505, in db_monodb
+    dbs = db_list(True, httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1472, in db_list
+    dbs = odoo.service.db.list_dbs(force)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\db.py", line 378, in list_dbs
+    with closing(db.cursor()) as cr:
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 665, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 196, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 548, in _locked
+    return fun(self, *args, **kwargs)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 616, in borrow
+    **connection_info)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\psycopg2\__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "openpg" - - -
+2022-02-15 04:16:35,505 11104 ERROR ? werkzeug: Error on request:
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 304, in run_wsgi
+    execute(self.server.app)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\serving.py", line 292, in execute
+    application_iter = app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\server.py", line 441, in app
+    return self.app(e, s)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 142, in application
+    return application_unproxied(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\wsgi_server.py", line 117, in application_unproxied
+    result = odoo.http.root(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1287, in __call__
+    return self.dispatch(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1257, in __call__
+    return self.app(environ, start_wrapped)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\werkzeug\middleware\shared_data.py", line 220, in __call__
+    return self.app(environ, start_response)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1420, in dispatch
+    self.setup_db(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1344, in setup_db
+    httprequest.session.db = db_monodb(httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1505, in db_monodb
+    dbs = db_list(True, httprequest)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\http.py", line 1472, in db_list
+    dbs = odoo.service.db.list_dbs(force)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\service\db.py", line 378, in list_dbs
+    with closing(db.cursor()) as cr:
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 665, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 196, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 548, in _locked
+    return fun(self, *args, **kwargs)
+  File "C:\Program Files (x86)\Odoo 13.0\server\odoo\sql_db.py", line 616, in borrow
+    **connection_info)
+  File "C:\Program Files (x86)\Odoo 13.0\python\lib\site-packages\psycopg2\__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "openpg" - - -
